@@ -8,7 +8,7 @@
 #include <stdio.h>
 #define	SPACE ' '
 #define COLLENGTH 50 //length of column is 50 characters
-//#define EOF '!'
+#define END '!'
 
 int main () {
 	char c;
@@ -19,7 +19,7 @@ int main () {
 	int i;
 	char word[100];
 
-	while ( (c = getchar()) != '!'){
+	while ( (c = getchar()) != END){
 
 		if (c == '\n'){
 			word[wordlen] = '\0';
