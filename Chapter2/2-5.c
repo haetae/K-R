@@ -6,7 +6,6 @@ int any (char s1[], char s2[]);
 int main () {
 	char c, d;
 	char s1[100], s2[100];
-	int i, j, k;
 	int size, result;
 	size = 100;
 	printf("Please type in a string: \n");
