@@ -1,13 +1,14 @@
 #include <stdio.h>
 #define true 1
 #define false 0
+#define END '!'
 
 int main () {
 	char c,b;
 	int incomment, instring;
 	incomment = instring = false;
 	b = getchar();
-	while ((c = getchar()) != EOF ){
+	while ((c = getchar()) != END ){
 		if (incomment == true){
 			if (b == '*' && c == '/'){
 				incomment = false;

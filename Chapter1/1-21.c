@@ -2,7 +2,7 @@
 #define	SPACE ' '
 #define	TAB	'\t'
 #define TABSTOP 8
-#define EOF '!'
+#define END '!'
 
 int main (){
 	char t;
@@ -14,7 +14,7 @@ int main (){
 
 	counter = 0;
 	spacecount = 0;
-	while ((t = getchar()) != EOF){
+	while ((t = getchar()) != END){
 
 		if (t == '\n'){
 			counter = 0;

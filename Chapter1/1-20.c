@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define	SPACE ' '
 #define	TAB	'\t'
-#define EOF '!'
+#define END '!'
 
 int main (){
 	char t;
@@ -10,7 +10,7 @@ int main (){
 	int nt;
 
 	counter = 0;
-	while ((t = getchar()) != EOF){
+	while ((t = getchar()) != END){
 		if (t == '\n'){
 			counter = 0;
 			printf("\n");

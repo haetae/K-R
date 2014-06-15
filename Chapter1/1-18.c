@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define EOF '!'
+#define END '!'
 
 int main () {
 	char c;
@@ -8,7 +8,7 @@ int main () {
 	int index;
 	index = 0;
 
-	for (int i = 0; i < 1000 && (c=getchar()) != EOF ; i++){
+	for (int i = 0; i < 1000 && (c=getchar()) != END ; i++){
 		if ((b == ' ' || b == '\n') && (c == ' ' || c == '\n')){
 			continue;
 		}

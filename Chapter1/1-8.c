@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define EOF '!'
+#define END '!'
 
  int main()
  {
@@ -10,7 +10,7 @@
 	 nl = 0;
 	 nt = 0;
 	 ns = 0;
-	 while ((temp = getchar()) != EOF){
+	 while ((temp = getchar()) != END){
 	 	if (temp == '\n')
 	 		++nl;
 	 	if (temp == '\t')

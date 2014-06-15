@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define in 1
 #define out 0
-#define EOF '!'
+#define END '!'
 
 int main (){
 	int number[50];
@@ -15,7 +15,7 @@ int main (){
 		number[k] = 0;
 	}
 
-	while ((a = getchar()) != EOF){
+	while ((a = getchar()) != END){
 		if (state == in){
 			if (a == ' ' || a == '\n' || a == '\t'){
 				state = out;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define MAXLINE 1000
-#define EOF '!'
+#define END '!'
 int getLine(char line[], int maxline);
 void copy(char to[], char from[]);
 int main() {
@@ -21,7 +21,7 @@ int main() {
 
 int getLine(char s[],int lim) {
 	int c, i;
-	for (i=0; i < lim-1 && (c=getchar())!= EOF && c!='\n'; ++i)
+	for (i=0; i < lim-1 && (c=getchar())!= END && c!='\n'; ++i)
 		s[i] = c;
 
 	if (c == '\n') {

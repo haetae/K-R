@@ -1,10 +1,10 @@
 #include <stdio.h>
-#define EOF '!'
+#define END '!'
 
  int main()
  {
 	 char temp;
-	 while ((temp = getchar()) != EOF){
+	 while ((temp = getchar()) != END){
 	 	if (temp != ' '){
 	 		putchar(temp);
 	 		continue;

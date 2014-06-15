@@ -1,13 +1,13 @@
 #include <stdio.h>
 #define IN 1
 #define OUT 0
-#define EOF '!'
+#define END '!'
 
 int main (){
 	int c, state;
 	state = 0;
 
-	while ((c = getchar ()) != EOF){
+	while ((c = getchar ()) != END){
 		if (c == ' ' || c == '\n' || c == '\t') {
 			state = OUT;
 			putchar('\n');
