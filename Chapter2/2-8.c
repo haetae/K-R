@@ -1,39 +1,40 @@
 #include <stdio.h>
 
+void getLine (char s[], int size);
 int tonumber (char s[]);
+int setbits (int x, int p, int n, int y);
 unsigned int rightrot (unsigned int x, unsigned int n);
 
 int main () {
 	char buffer[100];
 	char c;
-	int i;
-	unsigned int number, index, result;
-	i = 0;
+	unsigned int x, n, result;
+
 	printf("Please enter a number\n");
-	while ((c = getchar()) != '\n' && i < 100){
-		buffer[i] = c;
-		i++;
-	}
-	buffer[i] = '\0';
-	number = tonumber(buffer);
+	getLine(buffer, 100);
+	x = tonumber(buffer);
 
-	i = 0;
 	printf("Please enter the number of bits you would like to shift to the right: \n");
-	while ((c = getchar()) != '\n' && i < 100){
-		buffer[i] = c;
-		i++;
-	}
-	buffer[i] = '\0';
-	index = tonumber(buffer);
+	getLine(buffer, 100);
+	n = tonumber(buffer);
 
-	result = rightrot(number, index);
+	result = rightrot(x, n);
 	printf("The result is %d\n", result);
 
 
 	return 0;
 }
 
-int tonumber (char s[]) {
+void getLine (char s[], int size){
+	int i;
+	char c;
+	for (i = 0; (c = getchar()) != '\n' && i < size; i++){
+		s[i] = c;
+	}
+	s[i] = '\0';
+}
+
+int tonumber(char s[]){
 	int result;
 	result = 0;
 
@@ -44,6 +45,30 @@ int tonumber (char s[]) {
 	return result;
 }
 
+int setbits (int x, int p, int n, int y){
+	int i;
+	int bit;
+	for (i = 0; i < n; i++){
+		bit = (y >> i) % 2;
+
+		if (bit == 1){
+			x = x | (1 << (p + i));
+		}
+
+		else{
+			x = x & ~ (1 << (p + i));
+		} 
+	}
+
+	return x;
+}
+
 unsigned int rightrot(unsigned int x, unsigned int n){
-	return x >> n;
+	int result, temp;
+	n = n % 32;
+
+	temp = x >> n;
+	result = setbits(temp, 32 - n, n, x);
+
+	return result;
 }
