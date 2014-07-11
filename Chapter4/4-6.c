@@ -22,7 +22,7 @@ void print (); //prints stack without popping
 void duplicate (); // duplicates last element in stack
 void swap (); // swaps the last two elements in stack
 void clear (); // clears stack;
-void printlast ();
+void putlast();
 void printmenu ();
 double peek ();
 
@@ -135,7 +135,7 @@ int main(){
             break;
 
         case NEWLINE:
-            printlast();
+            putlast();
             break;
 
         case MENU:
@@ -177,6 +177,7 @@ void printmenu () {
     printf("\t %c to quit \n", END);
     printf("\nThis calculator supports sin, cos, tan, exp and pow functions\n");
     printf("You can store values in variables by typing 'put-' followed by the character of the variables (from 'a' to 'z')\n");
+    printf("The most recently cacluated value will be put into variable 'a'\n");
     printf("All variables are initialized to zero.\n");
 }
 
@@ -332,12 +333,12 @@ void print (){
     else printf("Stack is empty ;n; \n");
 }
 
-void printlast (){
+void putlast (){
     if (sp > 0) {
         double last = pop();
-        printf("last element is %f\n", last);
-        push(last);
-    }
+        printf("last element is %f, setting variable a to this element\n", last);
+        var[0] = last;
+    } 
 }
 
 
