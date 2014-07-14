@@ -333,7 +333,7 @@ void ungets(char s[]){
     int i;
 
     for (i = 0; s[i] != '\0'; i++){
-        buff[bufp++] = s[i];
+        buf[bufp++] = s[i];
     }
 }
 
